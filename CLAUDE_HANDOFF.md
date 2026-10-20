@@ -106,3 +106,15 @@ If you change schema or data: re-run reset + 01 + 02 against the target DB
   lists the most recent departures first (was lowest progress first), so a
   flight just confirmed by ground staff is visible without expanding. Display
   only; query unchanged.
+- 2026-10-21: added a clear "Show tables" toggle (`st.toggle`) at the bottom
+  of the passenger page (replacing the "Show full data tables" expander;
+  key `passenger_show_tables`) and at the bottom of the ground-staff
+  "Confirm loading / arrival" tab (below the run-transaction panel; key
+  `staff_show_tables`, friendly captions for unknown tag / no rows). Both
+  show the flight itinerary and scan/tracking history via the existing
+  `table()` helper (`db.itinerary()` / `db.scan_history()`), so the demo
+  can prove the screens are database-driven. Display only; `db.py`, SQL,
+  schema/data, transaction logic, login and supervisor page untouched.
+  Verified by syntax compile, headless Streamlit start (HTTP 200) and
+  AppTest for both pages (toggle on → 2 dataframes, no exceptions);
+  no transaction was run.

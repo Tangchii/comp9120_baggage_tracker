@@ -673,14 +673,17 @@ def passenger_page(user):
             st.caption("No scans recorded yet.")
 
     st.write("")
-    with st.expander("Show full data tables"):
+    st.divider()
+    if st.toggle("Show tables", key="passenger_show_tables"):
         st.markdown("**Flight itinerary**")
         table(segments, [
             "segment_order", "flight_number", "departure_airport", "arrival_airport",
             "scheduled_departure", "scheduled_arrival", "transport_status",
         ])
         st.markdown("**Tracking history** (oldest first)")
-        table(history)
+        table(history, [
+            "scanned_at", "airport_code", "point_name", "event_type", "flight_number",
+        ])
 
 
 # ---------- Ground staff ----------
@@ -721,8 +724,30 @@ def segment_transaction_tab():
                 f' · {len(segments)} flight segment{"s" if len(segments) > 1 else ""}</div>',
                 unsafe_allow_html=True,
             )
+    def _staff_tables():
+        st.write("")
+        st.divider()
+        if st.toggle("Show tables", key="staff_show_tables"):
+            st.markdown(f"**Flight itinerary** — bag tag `{tag}`")
+            if segments:
+                table(segments, [
+                    "segment_order", "flight_number", "departure_airport", "arrival_airport",
+                    "scheduled_departure", "scheduled_arrival", "transport_status",
+                ])
+            else:
+                st.caption(f"No itinerary found for bag tag {tag}. Check the tag and try again.")
+            st.markdown("**Tracking history** (oldest first)")
+            history = db.scan_history(tag) if tag else []
+            if history:
+                table(history, [
+                    "scanned_at", "airport_code", "point_name", "event_type", "flight_number",
+                ])
+            else:
+                st.caption(f"No scan history found for bag tag {tag}.")
+
     if not segments:
         st.info("No itinerary found for this tag.")
+        _staff_tables()
         return
 
     st.write("")
@@ -805,6 +830,8 @@ def segment_transaction_tab():
                 after = db.scan_count(tag)
                 st.session_state.flash = (kind, f"{message}  \nScan events for {tag}: {before} → {after}")
                 st.rerun()
+
+    _staff_tables()
 
 
 def record_scan_tab():
