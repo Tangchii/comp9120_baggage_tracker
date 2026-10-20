@@ -30,7 +30,7 @@ STAFF_PASSWORDS = {
 }
 
 DEMO_TAG = "100006"
-DEMO_EMAIL = "txz9120.eva.liu.05@gmail.com"
+DEMO_EMAIL = "eliu6879@gmail.com"
 
 # Ground scans that do not change a flight segment's status.
 GROUND_EVENTS = {

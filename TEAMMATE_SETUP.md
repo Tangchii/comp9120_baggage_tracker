@@ -62,7 +62,7 @@ python3 -m venv ~/.venvs/comp9120-baggage
 
 | 角色 | 登入方式 |
 |---|---|
-| 旅客 | 行李標籤 `100006`，Email `txz9120.eva.liu.05@gmail.com`（登入頁也有一鍵填入按鈕） |
+| 旅客 | 行李標籤 `100006`，Email `eliu6879@gmail.com`（登入頁也有一鍵填入按鈕） |
 | 地勤 | 密碼 `staff9120` |
 | 主管 | 角色選 Supervisor，密碼 `super9120` |
 

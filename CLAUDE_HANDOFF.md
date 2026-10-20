@@ -44,7 +44,7 @@ Stack: Streamlit + psycopg2 + PostgreSQL. Report language and UI are in English.
 
 ## Main bag for the demo video
 
-Passenger Eva Liu, tag `100006`, email `txz9120.eva.liu.05@gmail.com`.
+Passenger Eva Liu, tag `100006`, email `eliu6879@gmail.com`.
 Staff password `staff9120`, supervisor `super9120`.
 Suggested flow: passenger view (bag at FRA) → staff confirm loading with
 "simulate failure" on (rollback: scan count unchanged) → again for real

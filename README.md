@@ -22,7 +22,7 @@ database/
 
 | Role | Login |
 |---|---|
-| Passenger | Tag `100006`, email `txz9120.eva.liu.05@gmail.com` |
+| Passenger | Tag `100006`, email `eliu6879@gmail.com` |
 | Ground staff | Password `staff9120` |
 | Supervisor | Role "Supervisor", password `super9120` |
 

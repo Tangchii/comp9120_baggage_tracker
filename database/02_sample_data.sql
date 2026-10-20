@@ -38,7 +38,7 @@ INSERT INTO Passenger (name, email) VALUES
     ('Brian Lin', 'txz9120.brian.lin.02@gmail.com'),
     ('Chloe Wang', 'txz9120.chloe.wang.03@gmail.com'),
     ('Daniel Lee', 'txz9120.daniel.lee.04@gmail.com'),
-    ('Eva Liu', 'txz9120.eva.liu.05@gmail.com'),
+    ('Eva Liu', 'eliu6879@gmail.com'),
     ('Felix Wong', 'txz9120.felix.wong.06@gmail.com'),
     ('Haruto Sato', 'txz9120.haruto.sato.07@gmail.com'),
     ('Sofia Garcia', 'txz9120.sofia.garcia.08@gmail.com'),
@@ -62,7 +62,7 @@ INSERT INTO Baggage (passenger_id, tag_code, weight) VALUES
     ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.brian.lin.02@gmail.com'), '100003', 19.00),
     ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.chloe.wang.03@gmail.com'), '100004', 21.70),
     ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.daniel.lee.04@gmail.com'), '100005', 17.30),
-    ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.eva.liu.05@gmail.com'), '100006', 12.80),
+    ((SELECT passenger_id FROM Passenger WHERE email = 'eliu6879@gmail.com'), '100006', 12.80),
     ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.felix.wong.06@gmail.com'), '100007', 24.10),
     ((SELECT passenger_id FROM Passenger WHERE email = 'txz9120.felix.wong.06@gmail.com'), '100008', 18.60);
 
