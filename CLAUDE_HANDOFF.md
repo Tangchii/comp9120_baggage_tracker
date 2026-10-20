@@ -102,3 +102,7 @@ If you change schema or data: re-run reset + 01 + 02 against the target DB
   on a Sydney-time-zone Postgres: rollback 2 -> 2, commit 2 -> 3, business
   rule rejection 2 -> 2, ground scan, phone width (390 px) without sideways
   scroll.
+- 2026-10-20 (Claude, Cowork): supervisor "Loading progress by flight" card now
+  lists the most recent departures first (was lowest progress first), so a
+  flight just confirmed by ground staff is visible without expanding. Display
+  only; query unchanged.

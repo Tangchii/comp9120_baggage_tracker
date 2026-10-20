@@ -910,8 +910,9 @@ def supervisor_page():
 
     with left:
         raw_html('<div class="section-title">Loading progress by flight</div>')
+        # Most recent departures first: the flights staff are working on now.
         with_bags = sorted((r for r in progress if r["bags"]),
-                           key=lambda r: (r["loaded_or_arrived"], r["scheduled_departure"]))
+                           key=lambda r: r["scheduled_departure"], reverse=True)
         cols = "grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,2fr) minmax(0,.4fr)"
         rows = ['<span class="h">Flight</span><span class="h">Route</span>'
                 '<span class="h">Loaded or arrived</span><span class="h" style="text-align:right">Bags</span>']
@@ -926,7 +927,7 @@ def supervisor_page():
                 f'<span style="text-align:right">{r["bags"]}</span>'
             )
         raw_html(f'<div class="card"><div class="gridtable" style="{cols}">{"".join(rows)}</div>'
-                 '<p class="small" style="margin:12px 0 0">Lowest progress first.</p></div>')
+                 '<p class="small" style="margin:12px 0 0">Most recent departures first.</p></div>')
         with st.expander(f"Show all {len(progress)} flights"):
             table(progress, [
                 "flight_number", "departure_airport", "arrival_airport", "scheduled_departure",
