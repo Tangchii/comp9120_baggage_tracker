@@ -1,0 +1,8 @@
+# Visual theme only. Connection settings live in env vars / Secrets (see README).
+[theme]
+base = "light"
+primaryColor = "#1B5FD6"
+backgroundColor = "#F4F6FA"
+secondaryBackgroundColor = "#E9EEF5"
+textColor = "#13203A"
+font = "sans serif"

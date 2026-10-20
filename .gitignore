@@ -1,0 +1,19 @@
+# Secrets must never be committed (Streamlit Cloud stores them server-side)
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local database dumps may contain demo data; keep them out of the repo
+*.sql.bak
+baggage_backup.sql
+
+# Screenshots / archives (local only)
+Claude outputs/
+*.zip
+
+# OS / editor
+.DS_Store
